@@ -25,12 +25,12 @@ int main(int argc, char* argv[]) {
     std::filesystem::remove_all("./tmp");
 
     //Генерируем input-файл
-    std::ofstream file("input.bin", std::ios::binary);
+    std::ofstream file(inputFileName, std::ios::binary);
     if (!file.is_open()) {
         std::cerr << "Не удалось создать input-файл" << std::endl;
         return 1;
     }
-    
+
     //Записываем в input-файл нижеприведенные числа
     int32_t numbers[] = { 12345, -54321, 67890, -98765, 123456, -456789, 789012, -987654, 345678, -678901 };
     file.write(reinterpret_cast<char*>(numbers), sizeof(numbers));
