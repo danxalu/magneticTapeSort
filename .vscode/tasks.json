@@ -1,0 +1,54 @@
+{
+"version": "2.0.0",
+"tasks": [
+	{
+		"type": "cppbuild",
+		"label": "C/C++: g++ сборка активного файла",
+		"command": "/usr/bin/g++",
+		"args": [
+			"-fdiagnostics-color=always",
+			"-g",
+			"${workspaceFolder}/src/main.cpp",
+			"-o",
+			"${workspaceFolder}/build/main",
+			"-std=c++17",
+			"-I${fileDirname}"
+		],
+		"options": {
+			"cwd": "/usr/bin/"
+		},
+		"problemMatcher": [
+			"$gcc"
+		],
+		"group": {
+			"kind": "build",
+			"isDefault": true
+		},
+		"detail": "Компилятор: /usr/bin/g++"
+	},
+	{
+		"type": "shell",
+		"label": "С/C++: Запустить тесты",
+		"command": "/usr/bin/g++",
+		"args": [
+			"-fdiagnostics-color=always",
+			"-g",
+			"${workspaceFolder}/tests/main_test.cpp",
+			"-o",
+			"${workspaceFolder}/tests/main_test",
+			"-std=c++17",
+			"-I${fileDirname}",
+			"&&",
+			"${workspaceFolder}/tests/main_test"
+		],
+		"options": {
+			"cwd": "${workspaceFolder}/tests"
+		},
+		"group": {
+			"kind": "test",
+			"isDefault": true
+		},
+		"detail": "Перед запуском приложения"
+	}
+]
+}

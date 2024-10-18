@@ -1,0 +1,5 @@
+M=16
+readDelay=10
+writeDelay=10
+rewindDelay=100
+shiftDelay=10
